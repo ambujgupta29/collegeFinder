@@ -188,9 +188,15 @@ class _DropdownScreenState extends State<DropdownScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Color(0xFF0D1137),
       appBar: AppBar(
-        title: Text('COLLEGEPEDIA'),
+        backgroundColor: Color(0xFFE52165),
+        title: Text(
+          'COLLEGEPEDIA',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -202,21 +208,23 @@ class _DropdownScreenState extends State<DropdownScreen> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0),
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.red),
+                    border: Border.all(
+                      color: Color(0xFFE52165),
+                    ),
                     borderRadius: BorderRadius.all(Radius.circular(15.0))),
                 child: DropdownButton(
                   hint: Text('Select Country'),
                   isExpanded: true,
                   underline: SizedBox(),
-                  dropdownColor: Colors.red,
+                  dropdownColor: Color(0xFFE52165),
                   icon: Icon(
                     Icons.arrow_drop_down_outlined,
                     size: 36.0,
-                    color: Colors.red,
+                    color: Color(0xFFE52165),
                   ),
                   value: valueChoose,
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.w600),
+                      color: Colors.white, fontWeight: FontWeight.w600),
                   elevation: 3,
                   onChanged: (newvalue) {
                     setState(() {
@@ -259,9 +267,16 @@ class _DropdownScreenState extends State<DropdownScreen> {
                     width: 100.0,
                     height: 40.0,
                     decoration: BoxDecoration(
-                        color: Colors.red,
+                        color: Color(0xFFE52165),
                         borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                    child: Center(child: Text("NEXT")),
+                    child: Center(
+                        child: Text(
+                      "NEXT",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
                   ),
                 ),
               ),

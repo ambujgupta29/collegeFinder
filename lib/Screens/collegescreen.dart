@@ -50,7 +50,13 @@ class _CollegeScreenState extends State<CollegeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("College"),
+        backgroundColor: Color(0xFFE52165),
+        title: Text(
+          "College",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -63,7 +69,7 @@ class _CollegeScreenState extends State<CollegeScreen> {
           ),
         ],
       ),
-      backgroundColor: Colors.grey[700],
+      backgroundColor: Color(0xFF0D1137),
       body: ListView.builder(
           itemCount: newsm.length,
           itemBuilder: (BuildContext context, int index) {
@@ -80,6 +86,7 @@ class DataSearch extends SearchDelegate<CollegeModel> {
   @override
   ThemeData appBarTheme(BuildContext context) {
     return Theme.of(context).copyWith(
+      primaryColor: Color(0xFFE52165),
       textTheme: TextTheme(
         title: TextStyle(
           color: Colors.white,
@@ -140,7 +147,7 @@ class DataSearch extends SearchDelegate<CollegeModel> {
             .toList();
 
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Color(0xFF0D1137),
       body: ListView.builder(
         itemBuilder: (context, index) => CollegeContainer(
           name: suggestionlist[index].collegename,

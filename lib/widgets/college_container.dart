@@ -32,8 +32,14 @@ class _CollegeContainerState extends State<CollegeContainer> {
         ),
         child: Card(
           child: ListTile(
-            tileColor: Colors.red,
-            title: Text(widget.name),
+            tileColor: Color(0xFFE52165),
+            title: Text(
+              widget.name,
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w400,
+              ),
+            ),
             onTap: () {
               openurl(widget.url);
             },
