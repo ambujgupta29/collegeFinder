@@ -3,6 +3,7 @@ import 'package:collegepedia/Screens/testscreen.dart';
 import 'package:collegepedia/widgets/college_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DropdownScreen extends StatefulWidget {
   const DropdownScreen({Key key}) : super(key: key);
@@ -206,6 +207,16 @@ class _DropdownScreenState extends State<DropdownScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
+                padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 70.0),
+                child: Text(
+                  '"Find The College Of Your Dreams"',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w900,
+                      fontSize: 53),
+                ),
+              ),
+              Container(
                 padding: EdgeInsets.symmetric(horizontal: 15.0),
                 decoration: BoxDecoration(
                     border: Border.all(
@@ -259,26 +270,56 @@ class _DropdownScreenState extends State<DropdownScreen> {
               SizedBox(
                 height: 60.0,
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
-                  onTap: Switchfunction,
-                  child: Container(
-                    width: 100.0,
-                    height: 40.0,
-                    decoration: BoxDecoration(
-                        color: Color(0xFFE52165),
-                        borderRadius: BorderRadius.all(Radius.circular(15.0))),
-                    child: Center(
-                        child: Text(
-                      "NEXT",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: Switchfunction,
+                      child: Container(
+                        width: 100.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                            color: Color(0xFFE52165),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
+                        child: Center(
+                            child: Text(
+                          "NEXT",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
                       ),
-                    )),
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: GestureDetector(
+                      onTap: () {
+                        launch("tel://+918431885991");
+                      },
+                      child: Container(
+                        width: 190.0,
+                        height: 40.0,
+                        decoration: BoxDecoration(
+                            color: Color(0xFFE52165),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(15.0))),
+                        child: Center(
+                            child: Text(
+                          "Speak to our Counsellor ☏",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

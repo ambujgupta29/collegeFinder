@@ -1,4 +1,5 @@
 import 'package:collegepedia/Screens/dropdownScreen.dart';
+import 'package:collegepedia/Screens/login.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xFF203341),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: DropdownScreen(),
+      home: LoginScreen(),
     );
   }
 }
