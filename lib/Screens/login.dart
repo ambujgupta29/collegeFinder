@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:collegepedia/Screens/dropdownScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -13,6 +16,33 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool obscureText = true;
+  TextEditingController emailController = new TextEditingController();
+  Future sendEmail({
+    String email,
+  }) async {
+    final serviceID = 'service_ixg2spb';
+    final templateID = 'template_za8izei';
+    final userID = 'HUNRtIouPnTsyrv6r';
+
+    final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
+    final response = await http.post(
+      url,
+      headers: {
+        'origin': 'http://localhost',
+        'Content-Type': 'application/json',
+      },
+      body: json.encode({
+        'service_id': serviceID,
+        'template_id': templateID,
+        'user_id': userID,
+        'template_params': {
+          'user_email': email,
+        }
+      }),
+    );
+    print(response.body);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,6 +108,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(100.0)),
                             child: TextField(
+                              controller: emailController,
                               decoration: InputDecoration(
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(color: Colors.grey),
@@ -200,6 +231,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         GestureDetector(
                           onTap: () {
+                            print(emailController.text);
+                            sendEmail(email: emailController.text);
                             Navigator.push(
                               context,
                               MaterialPageRoute(
