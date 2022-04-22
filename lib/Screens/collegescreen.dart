@@ -85,7 +85,8 @@ class _CollegeScreenState extends State<CollegeScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: IconButton(
-              icon: Icon(Icons.list),
+              iconSize: 28,
+              icon: Icon(Icons.military_tech),
               onPressed: () {
                 if (apipath == 'India') {
                   Navigator.push(

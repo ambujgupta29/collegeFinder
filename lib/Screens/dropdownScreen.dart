@@ -302,7 +302,7 @@ class _DropdownScreenState extends State<DropdownScreen> {
                         launch("tel://+918431885991");
                       },
                       child: Container(
-                        width: 190.0,
+                        width: 200.0,
                         height: 40.0,
                         decoration: BoxDecoration(
                             color: Color(0xFFE52165),

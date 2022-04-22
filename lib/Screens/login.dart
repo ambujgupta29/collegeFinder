@@ -68,6 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w900,
+                          fontFamily: 'Ubuntu',
                           fontSize: 47),
                     ),
                     SizedBox(

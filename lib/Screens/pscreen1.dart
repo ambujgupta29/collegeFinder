@@ -1,9 +1,8 @@
-import 'package:collegepedia/Screens/jeescreen.dart';
 import 'package:collegepedia/widgets/college_container.dart';
 import 'package:flutter/material.dart';
 
-class TestScreen extends StatelessWidget {
-  const TestScreen({Key key}) : super(key: key);
+class Pscreen1 extends StatelessWidget {
+  const Pscreen1({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,6 @@ class TestScreen extends StatelessWidget {
       'Indian Institute of Technology Roorkee',
       'Indian Institute of Technology Guwahati',
       'Indian Institute of Technology Hyderabad',
-      'National Institute of Technology Tiruchirappalli',
       'Indian Institute of Technology Indore',
       'Indian Institute of Technology (BHU) Varanasi',
     ];
@@ -27,7 +25,6 @@ class TestScreen extends StatelessWidget {
       'https://iitr.ac.in/',
       'https://www.iitg.ac.in/',
       'https://iith.ac.in/',
-      'https://www.nitt.edu/',
       'https://www.iiti.ac.in/',
       'https://iitbhu.ac.in/',
     ];
@@ -36,29 +33,14 @@ class TestScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color(0xFFE52165),
         title: Text(
-          "Top 10 Colleges",
+          "Prediction",
           style: TextStyle(
             color: Colors.white,
           ),
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: IconButton(
-              iconSize: 35,
-              icon: Icon(Icons.online_prediction),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Jeescreen()),
-                );
-              },
-            ),
-          ),
-        ],
       ),
       body: ListView.builder(
-          itemCount: 10,
+          itemCount: 9,
           itemBuilder: (BuildContext context, int index) {
             return CollegeContainer(
               name: entries[index],
